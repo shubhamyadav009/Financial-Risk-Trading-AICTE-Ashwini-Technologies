@@ -1,0 +1,6 @@
+#Requirements for Transaction Cost Analysis (TCA)
+pandas
+numpy
+matplotlib
+openpyxl
+xlsxwriter
