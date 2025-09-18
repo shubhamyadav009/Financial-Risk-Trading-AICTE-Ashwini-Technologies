@@ -1,0 +1,32 @@
+{
+  "ARBITRAGE": {
+    "annual_return": 2.178326435447305,
+    "annual_volatility": 0.11603318312752947,
+    "sharpe_ratio": 18.514759119260976,
+    "cagr": 21.971908013884413
+  },
+  "MARKET_MAKING": {
+    "annual_return": 2.2179091588403113,
+    "annual_volatility": 0.11023779297684767,
+    "sharpe_ratio": 19.84717853794315,
+    "cagr": 23.338398600848098
+  },
+  "MEAN_REVERSION": {
+    "annual_return": 2.1692111640421805,
+    "annual_volatility": 0.1127780959468776,
+    "sharpe_ratio": 18.96832134007497,
+    "cagr": 21.68435375253599
+  },
+  "MOMENTUM": {
+    "annual_return": 2.239817113278396,
+    "annual_volatility": 0.119781126675826,
+    "sharpe_ratio": 18.448792181250848,
+    "cagr": 24.07812273104474
+  },
+  "PAIRS_TRADING": {
+    "annual_return": 2.1973823396099093,
+    "annual_volatility": 0.10451533201597425,
+    "sharpe_ratio": 20.73745830208571,
+    "cagr": 22.65079782771661
+  }
+}

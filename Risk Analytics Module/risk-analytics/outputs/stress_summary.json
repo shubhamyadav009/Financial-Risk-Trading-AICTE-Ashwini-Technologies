@@ -1,0 +1,28 @@
+{
+  "sector_shock": {
+    "shock": "sector",
+    "target": "Technology",
+    "shock_pct": -0.15,
+    "impact_usd": -0.0,
+    "impact_pct": -0.0,
+    "nav": 838633432.9683858,
+    "status": "ok"
+  },
+  "rates_up_100bps": {
+    "shock": "rates",
+    "delta_bps": 100,
+    "impact_usd": null,
+    "impact_pct": null,
+    "status": "no fixed income exposure"
+  },
+  "high_volatility": {
+    "shock": "volatility",
+    "vol_mult": 1.5,
+    "impact_usd": 840763857.9272001,
+    "impact_pct": 1.002540353001756,
+    "base_vol": 2.005080706003512,
+    "stressed_vol": 3.007621059005268,
+    "nav": 838633432.9683858,
+    "status": "ok"
+  }
+}

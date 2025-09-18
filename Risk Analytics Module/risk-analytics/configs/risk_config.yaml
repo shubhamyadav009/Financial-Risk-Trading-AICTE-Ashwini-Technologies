@@ -1,0 +1,68 @@
+# ========================================
+# RISK ANALYTICS CONFIGURATION
+# ========================================
+
+portfolio:
+  initial_nav: 100000000
+  base_currency: "USD"
+  rebalance_frequency: "daily"
+
+data:
+  trading_file: "C:/Users/myhp2/risk-analytics/data/project2_trading.csv"
+  instruments_file: "C:/Users/myhp2/risk-analytics/data/project2_instruments.csv"
+  timestamp_column: "timestamp"
+  pnl_column: "pnl_usd"
+  strategy_column: "strategy"
+  instrument_column: "instrument_id"
+
+risk:
+  lookback_days: 252
+  var_levels: [0.95, 0.99]
+  var_alert_usd: 5000000
+  drawdown_alert_pct: 0.05
+
+stress_scenarios:
+  enabled: true
+  scenarios:
+    sector_shock:
+      type: "sector"
+      sector_col: "sector"
+      target_sector: "Technology"
+      shock_pct: -0.15
+    rates_up_100bps:
+      type: "rates"
+      delta_bps: 100
+      proxy_duration_col: "credit_rating"   # ✅ use credit rating
+    high_volatility:
+      type: "vol"
+      vol_mult: 1.5
+      vol_col: "volatility_30d"             # ✅ matches dataset
+
+mappings:
+  duration_from_credit_rating:
+    AAA: 1.0
+    AA: 2.0
+    A: 3.0
+    BBB: 5.0
+    BB: 7.0
+    B: 10.0
+    CCC: 15.0
+  default_duration: 5.0
+
+performance:
+  risk_free_rate: 0.03
+  annualization_factor: 252
+  sharpe_window: 30
+
+reporting:
+  output_dir: "outputs"
+  save_plots: true
+  save_csvs: true
+  save_audit: true
+  log_level: "INFO"
+  file_format: "png"
+
+logging:
+  log_dir: "logs"
+  audit_filename: "audit_run.json"
+  alerts_filename: "alerts.json"

@@ -1,0 +1,11 @@
+[2025-09-18 11:57:04] [INFO] risk_analytics.main - ✅ Config loaded from C:\Users\myhp2\risk-analytics\configs\risk_config.yaml
+[2025-09-18 11:57:05] [INFO] risk_analytics.main - 📊 Trading shape=(30000, 21) | Instruments shape=(1500, 18)
+[2025-09-18 11:57:05] [INFO] risk_analytics.main - 📊 Merged shape=(30000, 38)
+[2025-09-18 11:57:05] [INFO] risk_analytics.main - 💰 Initial NAV: $100,000,000.00 (source=config)
+[2025-09-18 11:57:05] [INFO] risk_analytics.main - 📉 Portfolio Risk Metrics: {'VaR_95_daily': np.float64(0.003564631174648577), 'ES_95_daily': np.float64(0.0029598907894125997), 'VaR_99_daily': np.float64(0.0030004682732629718), 'ES_99_daily': np.float64(0.0017475345332370884)}
+[2025-09-18 11:57:05] [ERROR] risk_analytics.main - ❌ Pipeline failed: 'sector'
+Traceback (most recent call last):
+  File "C:\Users\myhp2\risk-analytics\src\risk_analytics\main.py", line 162, in main
+    df, "sector", s["sector"], s["shock_pct"], nav_series
+                  ~^^^^^^^^^^
+KeyError: 'sector'
