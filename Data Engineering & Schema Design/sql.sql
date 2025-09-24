@@ -1,6 +1,3 @@
--- -------------------------
--- Raw Layer (staging tables)
--- -------------------------
 CREATE TABLE raw_instruments (
   instrument_id VARCHAR(50),
   symbol VARCHAR(20),
@@ -45,10 +42,6 @@ CREATE TABLE raw_trading (
   venue VARCHAR(50),
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
-
--- -------------------------
--- Curated Layer (dim/fact)
--- -------------------------
 CREATE TABLE dim_instrument (
   instrument_id VARCHAR(50) PRIMARY KEY,
   symbol VARCHAR(20),
@@ -84,10 +77,6 @@ CREATE TABLE fact_trade (
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   FOREIGN KEY (instrument_id) REFERENCES dim_instrument(instrument_id)
 );
-
--- -------------------------
--- Reporting Layer (aggregated facts)
--- -------------------------
 CREATE TABLE rpt_daily_risk (
   snapshot_date DATE,
   portfolio_id VARCHAR(50),
