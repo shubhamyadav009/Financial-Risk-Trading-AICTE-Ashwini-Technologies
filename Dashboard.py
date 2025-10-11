@@ -991,7 +991,7 @@ elif section == "TCA & Attribution":
     if not tca_summary.empty:
         st.markdown("<div class='section-header'><h3>TCA Summary Metrics</h3></div>", unsafe_allow_html=True)
         
-        col1, col2, col3, col4, col5 = st.columns(5)
+        col1, col2, col3, col4 = st.columns(4)
         
         with col1:
             avg_slippage = tca_summary['avg_slippage_bps'].mean()
@@ -1009,12 +1009,6 @@ elif section == "TCA & Attribution":
             total_pnl = tca_summary['total_pnl'].sum()
             pnl_color = '#2ECC71' if total_pnl > 0 else '#E74C3C'
             kpi_card("Total P&L", total_pnl, None, pnl_color, ',.0f')
-        
-        with col5:
-            if 'cost_to_pnl_ratio' in tca_summary.columns:
-                avg_cost_ratio = tca_summary['cost_to_pnl_ratio'].mean()
-                ratio_color = '#E74C3C' if avg_cost_ratio > 10 else '#2ECC71'
-                kpi_card("Cost/P&L Ratio", avg_cost_ratio, None, ratio_color, '.2f', '%')
         
         st.markdown("<br>", unsafe_allow_html=True)
         
